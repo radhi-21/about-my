@@ -86,7 +86,7 @@ $projects = $connection->query(
         <section id="about">
             <div class="about-section container">
                 <img
-                    src="foto.png"
+                    src="foto.jpeg"
                     alt="Radhi Mohammad"
                     width="190"
                 >

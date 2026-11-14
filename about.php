@@ -14,6 +14,13 @@ if (!$profile) {
 function escape($value) {
     return htmlspecialchars($value, ENT_QUOTES, "UTF-8");
 }
+$skills = $connection->query(
+    "SELECT id, name, description FROM skills ORDER BY id"
+);
+
+$projects = $connection->query(
+    "SELECT id, title, description FROM projects ORDER BY id"
+);
 ?>
 
 <!DOCTYPE html>
@@ -98,100 +105,53 @@ function escape($value) {
             </div>
         </section>
 
-        <section id="skills" class="section">
-            <div class="skills-section container">
-                <p class="skills-tag">What I Know</p>
+           <section id="skills" class="section">
+             <div class="skills-section container">
+             <p class="skills-tag">What I Know</p>
+             <h2 class="about-title">My Skills</h2>
 
-                <h2 class="about-title">My Skills</h2>
+             <div class="skills-grid">
+            <?php while ($skill = $skills->fetch_assoc()): ?>
+                <div class="skills-card">
+                    <h3 class="skill-title">
+                        <?= escape($skill["name"]) ?>
+                    </h3>
 
-                <div class="skills-grid">
-                    <div class="skills-card">
-                        <h3 class="skill-title">HTML</h3>
+                    <p class="skill-des">
+                        <?= escape($skill["description"]) ?>
+                    </p>
+                 </div>
+                   <?php endwhile; ?>
+                 </div>
+                 </div>
+                 </section>
 
-                        <p class="skill-des">
-                            Structuring web pages with clean,
-                            semantic markup.
-                        </p>
-                    </div>
+      <section id="work" class="section">
+         <div class="work-section container">
+                 <p class="skills-tag">PORTFOLIO</p>
+                  <h2 class="about-title">My Previous Work</h2>
 
-                    <div class="skills-card">
-                        <h3 class="skill-title">CSS</h3>
+            <div class="work-grid">
+             <?php $number = 1; ?>
 
-                        <p class="skill-des">
-                            Styling and building responsive,
-                            good-looking layouts.
-                        </p>
-                    </div>
-
-                    <div class="skills-card">
-                        <h3 class="skill-title">JavaScript</h3>
-
-                        <p class="skill-des">
-                            Adding interactivity and logic
-                            to web pages.
-                        </p>
-                    </div>
-
-                    <div class="skills-card">
-                        <h3 class="skill-title">Git &amp; GitHub</h3>
-
-                        <p class="skill-des">
-                            Tracking my progress and sharing
-                            my projects.
-                        </p>
-                    </div>
-                </div>
+              <?php while ($project = $projects->fetch_assoc()): ?>
+               <div class="work-card">
+            <div class="work-card-num">
+                <?= $number++ ?>
             </div>
-        </section>
 
-        <section id="work" class="section">
-            <div class="work-section container">
-                <p class="skills-tag">Portfolio</p>
+            <h3 class="work-card-title">
+                <?= escape($project["title"]) ?>
+            </h3>
 
-                <h2 class="about-title">My Previous Work</h2>
-
-                <div class="work-grid">
-                    <div class="work-card">
-                        <div class="work-card-num">1</div>
-
-                        <h3 class="work-card-title">
-                            Personal About Page
-                        </h3>
-
-                        <p class="work-card-des">
-                            A simple bio/about page built
-                            with HTML and CSS basics.
-                        </p>
-                    </div>
-
-                    <div class="work-card">
-                        <div class="work-card-num">2</div>
-
-                        <h3 class="work-card-title">
-                            Landing Page Practice
-                        </h3>
-
-                        <p class="work-card-des">
-                            A practice landing page focused
-                            on layout and styling.
-                        </p>
-                    </div>
-
-                    <div class="work-card">
-                        <div class="work-card-num">3</div>
-
-                        <h3 class="work-card-title">
-                            This Bio Page
-                        </h3>
-
-                        <p class="work-card-des">
-                            A full portfolio-style page:
-                            hero, about, skills and more.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <p class="work-card-des">
+                <?= escape($project["description"]) ?>
+            </p>
+          </div>
+              <?php endwhile; ?>
+          </div>
+          </div>
+          </section>
 
         <section id="contact" class="section">
             <div class="container">

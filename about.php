@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . "/db.php";
+require  "db.php";
 
 $result = $connection->query(
     "SELECT * FROM profile ORDER BY id LIMIT 1"

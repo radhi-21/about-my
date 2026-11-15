@@ -38,7 +38,7 @@ if ($isPost) {
 
     if (empty($errors)) {
         try {
-            require __DIR__ . "/db.php";
+            require "db.php";
 
             $stmt = $connection->prepare(
                 "INSERT INTO messages (name, email, message)

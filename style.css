@@ -163,51 +163,6 @@ img {
     gap: 12px;
     margin-top: 30px;
 }
-
-
-.btn {
-    display: inline-block;
-    padding: 14px 28px;
-    border: 2px solid transparent;
-    border-radius: 999px;
-
-    transition:
-        transform var(--transition),
-        background-color var(--transition),
-        color var(--transition),
-        box-shadow var(--transition);
-}
-
-button.btn {
-    font: inherit;
-    cursor: pointer;
-}
-
-.btn-primary {
-    background-color: var(--color-primary);
-    color: #ffffff;
-}
-
-.btn-primary:hover {
-    background-color: var(--color-primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(79, 60, 229, 0.25);
-}
-
-.btn-sec {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-    font-weight: 500;
-}
-
-.btn-sec:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(79, 60, 229, 0.25);
-    background-color: var(--color-primary);
-    color: #ffffff;
-}
-
-
 .about-section {
     display: flex;
     flex-direction: row-reverse;
@@ -286,15 +241,6 @@ button.btn {
 .work-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 10px 20px rgba(79, 60, 229, 0.25);
-}
-
-.skills-tag {
-    color: var(--color-primary);
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-size: 14px;
-    margin-bottom: 8px;
 }
 
 .skill-title {

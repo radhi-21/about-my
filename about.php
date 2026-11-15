@@ -70,16 +70,6 @@ $projects = $connection->query(
                 <p>
                    <?= escape($profile["intro"])?>
                 </p>
-
-                <div class="hero-actions">
-                    <a href="#contact" class="btn btn-primary">
-                        Get in Touch
-                    </a>
-
-                    <a href="#work" class="btn btn-sec">
-                        See My Work
-                    </a>
-                </div>
             </div>
         </section>
 
@@ -155,8 +145,6 @@ $projects = $connection->query(
 
         <section id="contact" class="section">
             <div class="container">
-                <p class="skills-tag">Get In Touch</p>
-
                 <h2>Contact Me</h2>
 
                 <p>

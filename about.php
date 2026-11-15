@@ -85,7 +85,7 @@ $projects = $connection->query(
                     <p class="about-tag">About Me</p>
 
                     <h2 class="about-title">
-                        A little about myself
+                        A about myself
                     </h2>
 
                     <p class="about-p">
